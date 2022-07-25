@@ -47,13 +47,40 @@ kubectl logs -f <pod-name>
 kubectl delete pod <pod-name>
 
 #### Forcefully delete a pod
-kubectl delete pod <pod-name> --forcr
+kubectl delete pod <pod-name> --force
 
 #### Go inside a container/Get shell access
 kubectl exec -it nginx  bash
 
 #### Create a pod using a yml file
 kubectl apply -f pod.yml
+
+#### Create a deplpymet
+kubectl create deploy nginx --image=nginx
+
+#### Check the deployment
+kubectl get deployment 
+
+#### Increase the number of replicas
+kubectl scale deploy nginx --replicas=5 
+
+#### Edit the deployment file on the fly
+kubectl edit deploy nginx
+
+#### Describe the Deployment
+kubectl describe deploy nginx
+
+#### Change the image of a deployment
+kubectl set image deployment/nginx nginx=nginx:1.15.2 --record
+
+#### Check the rollout history
+kubectl rollout history deployment demo
+
+## Rollback the Deployment to older revision
+kubectl rollout undo deployment nginx --to-revision 2
+
+
+
 
 
 
