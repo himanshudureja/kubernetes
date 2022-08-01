@@ -32,10 +32,10 @@ kubectl label pod app=front-end
 
 #### Search for pod with label type=frontend
 
-[root@k8s-master ~]# kubectl get pods -l type=frontend
-NAME                     READY   STATUS    RESTARTS      AGE
-myapp-pod                1/1     Running   6 (30m ago)   255d
-nginx-6799fc88d8-5bjxz   1/1     Running   0             8m16s
+[root@k8s-master ~]# kubectl get pods -l type=frontend  
+NAME                     READY   STATUS    RESTARTS      AGE  
+myapp-pod                1/1     Running   6 (30m ago)   255d  
+nginx-6799fc88d8-5bjxz   1/1     Running   0             8m16s  
 
 #### Describe a Pod
 kubectl desribe pod
@@ -76,8 +76,17 @@ kubectl set image deployment/nginx nginx=nginx:1.15.2 --record
 #### Check the rollout history
 kubectl rollout history deployment demo
 
-## Rollback the Deployment to older revision
+#### Rollback the Deployment to older revision
 kubectl rollout undo deployment nginx --to-revision 2
+
+#### List of Network namespace
+ip netns list
+
+#### List all the namespace
+lsns | grep nginx   (get the pid)  
+lsns -p pid  
+
+
 
 
 
