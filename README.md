@@ -55,6 +55,19 @@ kubectl exec -it nginx  bash
 #### Create a pod using a yml file
 kubectl apply -f pod.yml
 
+#### Create a Replica Set using a yml file 
+kubecetl create -f replica-set.yml
+
+#### Check the replica sets
+kubectl get replicaset
+
+#### Delete a Replica set
+kubectl delete replicaset <name>
+
+#### Increase the no of Replicas in Replicaset
+kubectl replace -f replicaset.yml <imperative way - update in file>
+kubectl scale -replicas=6 -f replicaset.yml
+
 #### Create a deplpymet
 kubectl create deploy nginx --image=nginx
 
