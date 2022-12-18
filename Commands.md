@@ -1,6 +1,6 @@
 # Imperitive way commands in Kubernetes 
 
-###POD
+### POD
 
 #### Creating an nginx Pod:
 kubectl run nginx --image nginx
@@ -39,7 +39,7 @@ kubectl exec -it nginx  bash
 #### Create a pod using a yml file
 kubectl apply -f pod.yml
 
-##Replica Sets
+## Replica Sets
 
 #### Create a Replica Set using a yml file 
 kubecetl create -f replica-set.yml
@@ -74,8 +74,7 @@ kubectl describe deploy nginx
 #### Change the image of a deployment
 kubectl set image deployment/nginx nginx=nginx:1.15.2 --record
 
-## Another example of change the image of deployment
-
+#### Another example of change the image of deployment
 kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
 
 #### Check the rollout history
