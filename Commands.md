@@ -109,6 +109,14 @@ kubectl delete ns dev
 
 #### Switch the namespace
 kubectl config set-context --current --namespace=dev
+  
+#### Create the services using the yml file
+kubectl create -f service.yml
+  
+#### List the services
+kubecet get services 	
+
+  
 
 
 
