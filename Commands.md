@@ -51,7 +51,7 @@ kubectl get replicaset
 kubectl delete replicaset <name>
 
 #### Increase the no of Replicas in Replicaset
-kubectl replace -f replicaset.yml <imperative way - update in file>
+kubectl replace -f replicaset.yml <imperative way - update in file>\
 kubectl scale -replicas=6 -f replicaset.yml
 
 ## Deployment 
@@ -110,20 +110,16 @@ kubectl delete ns dev
 #### Switch the namespace
 kubectl config set-context --current --namespace=dev
   
+## Resource Quota  
+ 
+Create the yml file\
+kubectl create -f compute-quota.yml	  
+  
+## Services  
+    
 #### Create the services using the yml file
 kubectl create -f service.yml
   
 #### List the services
 kubecet get services 	
-
-  
-
-
-
-
-
-
-
-
-
 
