@@ -1,0 +1,34 @@
+## Manual Scheduling
+#### Assign the nodename to the pod definition file
+Under the spec section add **nodeName: node01**
+
+#### Lables and Selectors
+kubectl get pods --selector="env=prod"  --selector="bu=finance"
+
+#### Taints and Tolerations 
+Taints are applied at nodes ,  Tolerations are applied at Pod
+kubectl taint nodes node-name key=value:taint-effect
+
+Taint effects : NoSchedule, PreferNoSchedule, NoExecute
+
+tolerations:
+  -key: "app"
+   operator: "Equal"
+   value: "blue"
+   effect: "NoSchedule"
+
+#### Check the Taints
+kubectl describe node kubemaster | grep Taint
+
+
+
+
+
+
+
+
+
+
+
+
+
