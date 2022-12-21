@@ -20,6 +20,11 @@ tolerations:
 #### Check the Taints
 kubectl describe node kubemaster | grep Taint
 
+#### Remove the taint from control plane node
+kubectl taint node controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+
+
+
 
 
 
