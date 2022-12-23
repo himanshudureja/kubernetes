@@ -10,8 +10,8 @@ Taints are applied at nodes ,  Tolerations are applied at Pod
 kubectl taint nodes node-name key=value:taint-effect
 
 Taint effects : NoSchedule, PreferNoSchedule, NoExecute
-
-```tolerations:
+```
+tolerations:
   -key: "app"
    operator: "Equal"
    value: "blue"
