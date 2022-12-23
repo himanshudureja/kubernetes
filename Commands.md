@@ -114,6 +114,16 @@ kubectl config set-context --current --namespace=dev
  
 Create the yml file\
 kubectl create -f compute-quota.yml	  
+ 
+```
+resource:
+  requests:
+    cpu: "1"
+    memory: "1Gi"
+  limits:
+    cpu: "8"
+    memory: "8Gi"
+```  
   
 ## Services  
     
