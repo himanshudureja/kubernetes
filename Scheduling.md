@@ -11,11 +11,12 @@ kubectl taint nodes node-name key=value:taint-effect
 
 Taint effects : NoSchedule, PreferNoSchedule, NoExecute
 
-tolerations:
+```tolerations:
   -key: "app"
    operator: "Equal"
    value: "blue"
    effect: "NoSchedule"
+```   
 
 #### Check the Taints
 kubectl describe node kubemaster | grep Taint
@@ -37,6 +38,7 @@ kubectl get node node01 --show-lables
 
 #### Node Affinity 
 
+```
 affinity:
  nodeaffinity:
   requiredDuringSchedulingIgnoredDuringExecution:
@@ -47,7 +49,8 @@ affinity:
        values: 
        - Large
        - Medium
-       
+```       
+```       
 affinity:
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
@@ -55,6 +58,7 @@ affinity:
         - matchExpressions:
           - key: node-role.kubernetes.io/control-plane
             operator: Exists      
+```            
        
        
 
